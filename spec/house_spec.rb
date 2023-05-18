@@ -57,5 +57,9 @@ RSpec.describe House do
     it "has a total area" do
       expect(@house.area).to eq(1900)
     end
+
+    it "has house details" do
+      expect(@house.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
+    end
   end
 end

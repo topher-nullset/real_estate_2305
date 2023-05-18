@@ -23,4 +23,7 @@ class House
     @rooms.sum(&:area)
   end
 
+  def details
+    {"price" => price.gsub('$', '').to_i, "address" => address}
+  end
 end
