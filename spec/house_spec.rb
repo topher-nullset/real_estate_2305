@@ -87,10 +87,6 @@ RSpec.describe House do
     it "can hash map rooms and categories" do
       expect(@house.rooms_by_category)
     end
-
-#    it "can sort rooms into categories" do
-#      expet(@house.rooms_by_category).to eq({:bedroom => [@room_1, @room_2], :living_room => [@room_3] , :basement => [@room_4]})})
-#    end
-#  end
+  end
 
 end

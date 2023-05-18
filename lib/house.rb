@@ -7,12 +7,16 @@ class House
     @rooms = []
   end
 
+  def price_to_int
+    @price.gsub('$', '').to_i
+  end
+
   def add_room(room)
     @rooms << room
   end
 
   def above_market_average?
-    @price.gsub('$', '').to_i > 500_000
+    price_to_int > 500_000
   end
 
   def rooms_from_category(category)
@@ -35,8 +39,8 @@ class House
     @rooms.sort_by { |room| room.area }.reverse
   end
 
-#  def rooms_by_category
-#    categories = @rooms.map(&:category).uniq
-#    categories.each_with_object({}) { |category, hash| hash[category] = rooms_from_category(category) }
-#  end
+  def rooms_by_category
+    categories = @rooms.map(&:category).uniq
+    categories.each_with_object({}) { |category, hash| hash[category] = rooms_from_category(category) }
+  end
 end
