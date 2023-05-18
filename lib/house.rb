@@ -1,6 +1,6 @@
 class House
 
-  attr_reader :price, :address, :rooms
+  attr_reader :address, :rooms
   def initialize(price, address)
     @price = price
     @address = address
@@ -28,11 +28,11 @@ class House
   end
 
   def details
-    {"price" => price.gsub('$', '').to_i, "address" => address}
+    {"price" => price_to_int, "address" => address}
   end
 
   def price_per_square_foot
-    (price.gsub('$', '').to_f / area.to_f).round(2)
+    (price_to_int.to_f / area.to_f).round(2)
   end
 
   def rooms_sorted_by_area

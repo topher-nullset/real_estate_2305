@@ -14,7 +14,7 @@ RSpec.describe House do
     end
 
     it "has a price" do
-      expect(@house.price).to eq("$400000")
+      expect(@house.price_to_int).to eq(400000)
     end
 
     it "has an address" do
