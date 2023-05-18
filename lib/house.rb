@@ -34,5 +34,9 @@ class House
   def rooms_sorted_by_area
     @rooms.sort_by { |room| room.area }.reverse
   end
-  
+
+#  def rooms_by_category
+#    categories = @rooms.map(&:category).uniq
+#    categories.each_with_object({}) { |category, hash| hash[category] = rooms_from_category(category) }
+#  end
 end
