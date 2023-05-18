@@ -12,10 +12,15 @@ class House
   end
 
   def above_market_average?
-    @price.gsup('$', '').to_i > 500_000
+    @price.gsub('$', '').to_i > 500_000
   end
 
   def rooms_from_category(category)
     @rooms.select { |room| room.category == category }
   end
+
+  def area
+    @rooms.sum(&:area)
+  end
+
 end
